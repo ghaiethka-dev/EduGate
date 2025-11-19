@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="main_div">
+      <nav class="navbar">
+        <div><img src="logoo.jpg" class="logo" /></div>
+
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+
+        <div class="actions">
+          <input type="text" placeholder="search..." class="search" />
+          <button class="login-btn">SignUp</button>
+        </div>
+      </nav>
+      <div class="section-header">
+    <h2>Choose Your Learning Path</h2>
+    <p>Explore a variety of categories to start your educational journey</p>
+</div>
+
+      <div class="sections-grid">
+        <div class="section-card">
+          <lottie-player
+            class="lottie"
+            src="education.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          >
+          </lottie-player>
+          <h3 class="section-title">Courses</h3>
+          <div class="overlay">Courses</div>
+        </div>
+
+        <div class="section-card">
+          <lottie-player
+            class="lottie"
+            src="graduation.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          >
+          </lottie-player>
+          <h3>Graduation projects</h3>
+          <div class="overlay">Graduation projects </div>
+        </div>
+
+        <div class="section-card">
+          <lottie-player
+            class="lottie"
+            src="seminar.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          >
+          </lottie-player>
+          <h3>Research Seminar</h3>
+          <div class="overlay">Research Seminar</div>
+        </div>
+
+        <div class="section-card">
+          <lottie-player
+            class="lottie"
+            src="homework.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          >
+          </lottie-player>
+          <h3>Homework</h3>
+          <div class="overlay">Homework</div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </body>
+</html>
