@@ -70,6 +70,109 @@ body {
 .login-btn:hover {
     background: #1a4f80;
 }
+/* Hero Section */
+.hero {
+  background-color: #f7f9fb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 5%;
+  /* background: linear-gradient(to right, #f5f3ff, #f0f4ff); */
+  gap: 50px;
+}
+
+/* Left Content */
+.hero-content {
+  flex: 1;
+}
+
+
+
+.hero-content h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  color: #111;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.hero-content h1 span {
+  color: #2b6cb0;
+}
+
+.hero-content p {
+  color: #555;
+  font-size: 18px;
+  max-width: 520px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background: #2b6cb0;
+  color: white;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.btn-primary:hover {
+  background: #1a4f80;
+}
+
+.btn-secondary {
+  background: white;
+  border: 2px solid #ddd;
+  color: #333;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.btn-secondary:hover {
+  background: #f7f7f7;
+}
+
+/* Image */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 22px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-content p {
+    margin: 0 auto 30px;
+  }
+}
+
 .sections-grid {
     width: 70%;               /* كانت واسعة جداً → صغّرناها */
     margin: 40px auto;
@@ -100,7 +203,7 @@ body {
 .section-header h2 {
     font-size: 32px;
     font-weight: 700;
-    color: #2b2b2b;
+    color: #2b6cb0;
 }
 
 .section-header p {
@@ -146,3 +249,189 @@ body {
 .section-card:hover .overlay {
     opacity: 1;
 }
+/* ===== Statistics Section ===== */
+.stats-section {
+    width: 100%;
+    padding: 70px 0;
+    background: #f7f9fb;
+    text-align: center;
+}
+
+.stats-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2b6cb0;
+    margin-bottom: 40px;
+}
+
+/* Container */
+.stats-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Cards */
+.stat-card {
+    background: #ffffff;
+    width: 280px;
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+}
+
+/* Icon */
+.stat-icon {
+    font-size: 40px;
+    color: black;
+    margin-bottom: 12px;
+}
+
+/* Numbers */
+.stat-card h2 {
+    font-size: 40px;
+    /* font-weight: bold; */
+    color: black;
+    margin-bottom: 8px;
+}
+
+/* Text */
+.stat-card p {
+    font-size: 18px;
+    color: #333;
+}
+
+.top-courses {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.section-title span {
+    color: #2b6cb0;
+}
+
+.section-subtitle {
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    width: 90%;
+    margin: auto;
+}
+
+.course-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Image */
+.course-image {
+    position: relative;
+}
+
+.course-image img {
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+}
+
+.level-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #2b6cb0;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* Content */
+.course-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.course-content h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.instructor {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Stats */
+.stats {
+    display: flex;
+    gap: 15px;
+    margin: 12px 0;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Buttons */
+.view-btn {
+    width: 100%;
+    background: white;
+    border: 2px solid #2b6cb0;
+    color: #2b6cb0;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-btn:hover {
+    background: #2b6cb0;
+    color: white;
+}
+
+.center-btn {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.all-courses-btn {
+    padding: 12px 25px;
+    background: #2b6cb0;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.all-courses-btn:hover {
+    background: #2b6cb0;
+}
+
