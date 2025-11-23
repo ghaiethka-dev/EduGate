@@ -332,18 +332,19 @@ body {
 
 .courses-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    width: 90%;
+    grid-template-columns: repeat(2, 1fr); /* فجعلهم 2 فوق و2 تحت */
+    gap: 45px;
+    width:65%; /* نفس عرض الكروت في الصورة */
     margin: auto;
 }
 
 .course-card {
     background: white;
-    border-radius: 16px;
+    border-radius: 20px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     transition: 0.3s ease;
+    padding-bottom: 10px;
 }
 
 .course-card:hover {
@@ -358,7 +359,9 @@ body {
 
 .course-image img {
     width: 100%;
-    border-radius: 16px 16px 0 0;
+    height: 220px;       /* حجم مقارب للـ Categories */
+    object-fit: cover;   /* يكبر الصورة بدون تشويه */
+    border-radius: 20px 20px 0 0;
 }
 
 .level-tag {
