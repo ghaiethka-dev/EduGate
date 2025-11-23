@@ -1,0 +1,451 @@
+:root {
+    --navy: #1a0b72;
+    --accent: #ff7a2d;
+    --white: #ffffff;
+    --muted: #7a8a99;
+    --glass: rgba(255, 255, 255, 0.06);
+    --radius: 18px;
+    --max-width: 1100px;
+    --transition: 350ms cubic-bezier(.2, .9, .25, 1);
+    font-family: "Segoe UI", Roboto, "Noto Kufi Arabic", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    background-image: url("images/background.jpg");
+    color: var(--navy);
+}
+
+/* Header */
+.topbar {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    height: 25%;
+    animation: fadeDown 0.9s ease-out;
+}
+
+.logo-img {
+    height: 170px;
+    width: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.15));
+    animation: softPop 1.2s ease;
+}
+
+/* Hero Section */
+.hero {
+    width: 92%;
+    margin: 10px auto 25px;
+    padding: 45px 35px;
+    border-radius: 26px;
+    background: linear-gradient(-90deg, rgba(14, 162, 152, 0.95), rgb(251, 251, 251));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+    animation: fadeUp 1.1s ease-out;
+    transform-origin: bottom;
+}
+
+.hero-content h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.lottie-box {
+    width: 260px;
+    height: 260px;
+    animation: float 3s ease-in-out infinite;
+}
+
+
+/* Role Buttons */
+
+.primary-btn {
+    background: linear-gradient(135deg, #1a0b72, #352ca3);
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    letter-spacing: 0.4px;
+
+    box-shadow:
+        0 8px 20px rgba(26, 11, 114, 0.25),
+        inset 0 0 0 0 rgba(255, 255, 255, 0);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 14px 32px rgba(26, 11, 114, 0.40),
+        inset 0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+/* زر التحويل بين الطالب/المدرس */
+.ghost-btn {
+    background: rgba(26, 11, 114, 0.05);
+    border: 2px solid rgba(26, 11, 114, 0.18);
+    padding: 13px 16px;
+    border-radius: 14px;
+
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #1a0b72;
+
+    width: 100%;
+    text-align: center;
+
+    backdrop-filter: blur(3px);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.ghost-btn:hover {
+    background: rgba(26, 11, 114, 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+/* توزيع الأزرة داخل الـ form */
+.actions {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+.role-selector {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    margin: 28px 0;
+    animation: fadeUp 1.3s ease-out;
+}
+
+.bubble-btn {
+    height: 58px;
+    width: 220px;
+    background: #ffffff;
+    border: none;
+    border-radius: 60px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 300ms ease;
+}
+
+.bubble-btn:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+/* Login Button */
+.login-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.login-beauty-btn {
+    width: 55%;
+    text-align: center;
+    padding: 16px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    background: linear-gradient(135deg, #4a90e2, #0066cc);
+    color: white;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: 300ms ease;
+}
+
+.login-beauty-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(7px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+.overlay[aria-hidden="false"] {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Form Container */
+.overlay-inner {
+    width: 100%;
+    max-width: 1080px;
+    height: 92vh;
+    background: white;
+    border-radius: 22px;
+
+    display: flex;
+    overflow: hidden;
+
+    transform: translateY(25px) scale(0.95);
+    animation: fadePop 0.5s ease-out forwards;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Form side */
+.form-panel {
+    width: 50%;
+    padding: 40px;
+    overflow-y: auto;
+    animation: fadeLeft 0.8s ease-out;
+}
+
+.field {
+    margin-bottom: 18px;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(8, 32, 59, 0.15);
+    transition: 180ms ease;
+    background: #fafbff;
+}
+
+.field input:focus,
+.field textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+    transform: translateY(-1px);
+}
+
+/* Image side */
+.image-panel {
+    width: 50%;
+    background-size: cover !important;
+    background-position: center !important;
+    animation: fadeRight 0.8s ease-out;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadePop {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.93);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes softPop {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+/* ===== Footer Styling ===== */
+.main-footer {
+    opacity: 0.9;
+    background: linear-gradient(90deg, rgba(14, 162, 152, 0.95), rgb(251, 251, 251));
+    color: white;
+    padding: 60px 20px 25px;
+    margin-top: 90px;
+    border-radius: 2%;
+}
+
+.footer-container {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-col h3 {
+    color: #ff8a00;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.footer-col h4 {
+    color: #ff8a00;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin: 6px 0;
+}
+
+.footer-col ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #ff8a00;
+    padding-left: 6px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 15px;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    background: #112544;
+    transition: 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #ff8a00;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    color: #000000;
+    font-size: 14px;
+    border-top: 1px solid #18304a;
+    padding-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        text-align: center;
+        justify-content: center;
+    }
+    .social-links a {
+        margin-bottom: 10px;
+    }
+}

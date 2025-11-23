@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Create an account — Courses platform</title>
+        <link rel="stylesheet" href="style_singup.css" />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+
+    </head>
+    <body>
+        <header class="topbar">
+            <img src="images/logo.png" class="logo-img" alt="EduGate Logo">
+        </header>
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Join now — learn and teach professionally</h2>
+                    <p style="color:#003554d3">Choose "Student" or "Teacher" to
+                        begin creating a custom
+                        account.</p>
+                    <footer class="role-selector">
+                        <button class="bubble-btn big" id="btn-student"
+                            data-role="student">
+                            Student
+                            <span class="bubble-icon">🎓</span>
+                        </button>
+
+                        <button class="bubble-btn big" id="btn-teacher"
+                            data-role="teacher">
+                            Teacher
+                            <span class="bubble-icon">👨‍🏫</span>
+                        </button>
+
+                    </footer>
+                    <div class="login-btn-container">
+                        <a href="log_in.html" class="login-beauty-btn">
+                            have  Account ? login </a>
+                    </div>
+                </div>
+                <div id="lottie-hero" class="lottie-box"></div>
+
+            </section>
+
+        </main>
+        <!-- Fullscreen modal overlay -->
+        <div class="overlay" id="overlay" role="dialog" aria-modal="true"
+            aria-hidden="true">
+            <div class="overlay-inner" id="overlayInner">
+                <!-- left: form -->
+                <div class="panel form-panel" id="formPanel">
+                    <button class="close-btn" id="closeBtn"
+                        aria-label="إغلاق نموذج">✕</button>
+                    <div class="form-wrap">
+                        <h3 id="formTitle">Create an account</h3>
+                        <p id="formSubtitle" class="muted">Fill in the details
+                            to begin your journey</p>
+                        <form id="signupForm" novalidate>
+                            <!-- common: name/email/password -->
+                            <div class="field">
+                                <label for="name">full name</label>
+                                <input type="text" id="name" name="name"
+                                    required minlength="3"
+                                    placeholder="example:dala adwan" />
+                                <small class="error" data-for="name"></small>
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email"
+                                    required placeholder="example@mail.com" />
+                                <small class="error" data-for="email"></small>
+                            </div>
+                            <div class="field split">
+                                <div>
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password"
+                                        name="password" required minlength="8"
+                                        placeholder="⁕⁕⁕⁕⁕⁕⁕⁕" />
+                                    <small class="error"
+                                        data-for="password"></small>
+                                </div>
+                                <div>
+                                    <label for="confirmPassword">Confirm
+                                        Password</label>
+                                    <input type="password" id="confirmPassword"
+                                        name="confirmPassword" required
+                                        placeholder="Repeat Enter Password" />
+                                    <small class="error"
+                                        data-for="confirmPassword"></small>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="age">Age</label>
+                                <input type="number" id="age" name="age"
+                                    required min="13" max="120"
+                                    placeholder="مثال: 24" />
+                                <small class="error" data-for="age"></small>
+                            </div>
+                            <!-- student-specific fields -->
+                            <div id="studentExtra" class="role-extra hidden">
+                                <div class="field">
+                                    <label for="studyLevel">/Academic level
+                                        Interest</label>
+                                    <input type="text" id="studyLevel"
+                                        name="studyLevel"
+                                        placeholder="Example: Bachelor of Engineering" />
+                                    <small class="error"
+                                        data-for="studyLevel"></small>
+                                </div>
+                            </div>
+                            <!-- teacher-specific fields -->
+                            <div id="teacherExtra" class="role-extra hidden">
+                                <div class="field">
+                                    <label for="specialty">specialty</label>
+                                    <input type="text" id="specialty"
+                                        name="specialty"
+                                        placeholder="Example: Programming, Mathematics, Design" />
+                                    <small class="error"
+                                        data-for="specialty"></small>
+                                </div>
+                                <div class="field">
+                                    <label for="bio">A brief introduction about
+                                        you</label>
+                                    <textarea id="bio" name="bio" rows="4"
+                                        minlength="20"
+                                        placeholder="Introduce your experience and passion to the students"></textarea>
+                                    <small class="error" data-for="bio"></small>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <button type="submit" class="primary-btn">Create
+                                    Account</button>
+                                <button type="button" class="ghost-btn"
+                                    id="switchRoleBtn">Choose Another
+                                    Account</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- right: image -->
+                <div class="panel image-panel" id="imagePanel"
+                    aria-hidden="true">
+                    <!-- we'll set background-image via JS depending on role -->
+                    <div class="image-overlay">
+                        <h4 id="imageLabel">Welcome</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- زر تسجيل الدخول -->
+
+        <script src="script_singup.js"></script>
+
+        <!-- ====== Footer Section ====== -->
+<footer class="main-footer">
+    <div class="footer-container">
+
+        <div class="footer-col">
+            <h3>EduGate</h3>
+            <p>Your gateway to professional learning and teaching.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Teachers</a></li>
+                <li><a href="#">Help Center</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="#" class="facebook">Facebook</a>
+                <a href="#" class="x">X</a>
+                <a href="#" class="instagram">Instagram</a>
+                <a href="#" class="whatsapp">WhatsApp</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 EduGate — All Rights Reserved</p>
+    </div>
+</footer>
+
+    </body>
+</html>
