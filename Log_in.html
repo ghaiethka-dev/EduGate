@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EduGate Login</title>
+        <link rel="stylesheet" href="style_login.css">
+    </head>
+
+    <body>
+        <header class="topbar">
+            <img src="images/logo.png" class="logo-img" alt="EduGate Logo">
+        </header>
+
+        <!-- صندوق تسجيل الدخول -->
+        <div class="login-card animate-pop">
+            <h2 class="title">Login</h2>
+
+            <form id="loginForm" class="form">
+
+                <div class="field">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+
+                <div class="field">
+                    <input type="password" id="password" placeholder="Password"
+                        required>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+                <small id="errorMsg" class="error"></small>
+            </form>
+
+            <p class="signup-text">
+                Don't have an account?
+                <a href="singup.html">Sign Up</a>
+            </p>
+        </div>
+
+        <script>
+        // Simple validation
+        document.getElementById('loginForm').onsubmit = function(e) {
+            e.preventDefault();
+            const email = email.value.trim();
+            const password = password.value.trim();
+            const errorMsg = document.getElementById('errorMsg');
+
+            if (!email.includes('@')) {
+                errorMsg.textContent = "Please enter a valid email.";
+            } else if (password.length < 6) {
+                errorMsg.textContent = "Password must be at least 6 characters.";
+            } else {
+                errorMsg.textContent = "";
+                // Proceed with login
+            }
+        }
+    </script>
+
+    </body>
+</html>
